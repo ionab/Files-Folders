@@ -40,6 +40,8 @@ public class Runner {
         List<Folder> folders2 = DBHelper.getAll(Folder.class);
         DBFile.delete(file5);
         List<File> files3 = DBHelper.getAll(File.class);
+        DBFolder.delete(folder4);
+        List<Folder> folders3 = DBHelper.getAll(Folder.class);
 
 
     }
