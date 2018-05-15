@@ -7,14 +7,16 @@ import java.util.Set;
 @Table(name="folders")
 
 public class Folder {
+
     private String title;
     private Set<File> files;
     private int id;
 
-    public Folder(String title, Set<File> files) {
+    public Folder(String title) {
         this.title = title;
         this.files = files;
     }
+
     public Folder() {
     }
 
