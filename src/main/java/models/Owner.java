@@ -17,13 +17,13 @@ public class Owner {
     public Owner(String name, String username) {
         this.name = name;
         this.username = username;
-        this.folders = folders;
+
     }
 
     public Owner() {
     }
 
-    @OneToMany(mappedBy = "folders")
+    @OneToMany(mappedBy = "owner")
     public List<Folder> getFolders() {
         return folders;
     }
