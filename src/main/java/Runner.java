@@ -39,7 +39,7 @@ public class Runner {
 
         List<Owner> owners2 = DBHelper.getAll(Owner.class);
 
-        DBOwner.delete(owner3);
+        DBOwner.delete(owner2);
         List<Owner> owners3 = DBHelper.getAll(Owner.class);
 
 
@@ -82,6 +82,7 @@ public class Runner {
 
 
         List<File> filesinFolder1 = DBFolder.getFilesInFolder(folder1);
+        List<Folder> foldersinOwner = DBOwner.getFoldersOfOwner(owner3);
 
     }
 }
