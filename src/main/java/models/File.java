@@ -1,6 +1,4 @@
-package folder.models;
-
-import folder.models.Folder;
+package models;
 
 import javax.persistence.*;
 
@@ -58,7 +56,8 @@ public class File {
     public void setSize(int size) {
         this.size = size;
     }
-    @OneToMany
+    @ManyToOne
+    @JoinColumn(name = "folder_id", nullable = false)
     public Folder getFolder() {
         return folder;
     }

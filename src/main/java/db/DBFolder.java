@@ -1,4 +1,4 @@
-package folder.db;
+package db;
 
 public class DBFolder {
 }
