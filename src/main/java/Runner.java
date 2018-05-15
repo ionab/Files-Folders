@@ -3,22 +3,27 @@ import db.DBFolder;
 import db.DBHelper;
 import models.File;
 import models.Folder;
+import models.Owner;
 
 import java.util.List;
 
 public class Runner {
 
     public static void main(String[] args) {
+        Owner owner1 = new Owner("test name", "test username");
+        Owner owner2 = new Owner("test name", "test username");
+        Owner owner3 = new Owner("test name", "test username");
 
-       Folder folder1 = new Folder("test title");
-       Folder folder2 = new Folder("test title");
-       Folder folder3 = new Folder("test title");
-       Folder folder4 = new Folder("test title");
-       File file1 = new File("test name", "txt", 4, folder1);
-       File file2 = new File("test name", "txt", 4, folder1);
-       File file3 = new File("test name", "txt", 4, folder1);
-       File file4 = new File("test name", "txt", 4, folder1);
-       File file5 = new File("test name", "txt", 4, folder1);
+
+        Folder folder1 = new Folder("test title", owner1);
+        Folder folder2 = new Folder("test title", owner2);
+        Folder folder3 = new Folder("test title", owner3);
+        Folder folder4 = new Folder("test title", owner3);
+        File file1 = new File("test name", "txt", 4, folder1);
+        File file2 = new File("test name", "txt", 4, folder1);
+        File file3 = new File("test name", "txt", 4, folder1);
+        File file4 = new File("test name", "txt", 4, folder1);
+        File file5 = new File("test name", "txt", 4, folder1);
 
         DBHelper.save(folder1);
         DBHelper.save(folder2);

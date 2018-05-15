@@ -22,6 +22,7 @@ public class Owner {
 
     public Owner() {
     }
+
     @OneToMany(mappedBy = "folders")
     public List<Folder> getFolders() {
         return folders;
