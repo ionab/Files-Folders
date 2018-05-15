@@ -38,6 +38,9 @@ public class Runner {
         folder2.setTitle("test title updated");
         DBFolder.update(folder2);
         List<Folder> folders2 = DBHelper.getAll(Folder.class);
+        DBFile.delete(file5);
+        List<File> files3 = DBHelper.getAll(File.class);
 
-        }
+
+    }
 }

@@ -22,4 +22,18 @@ public class DBFile {
             session.close();
         }
     }
+
+    public static void delete(File file){
+        session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            transaction = session.beginTransaction();
+            session.delete(file);
+            transaction.commit();
+        } catch (HibernateException e){
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
 }
