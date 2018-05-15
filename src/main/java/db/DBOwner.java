@@ -23,4 +23,18 @@ public class DBOwner {
             session.close();
         }
     }
+
+    public static void delete(Owner owner){
+        session = HibernateUtil.getSessionFactory().openSession();
+        try{
+            transaction = session.beginTransaction();
+            session.delete(owner);
+            transaction.commit();
+        } catch (HibernateException e){
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
 }

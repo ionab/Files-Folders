@@ -1,6 +1,7 @@
 import db.DBFile;
 import db.DBFolder;
 import db.DBHelper;
+import db.DBOwner;
 import models.File;
 import models.Folder;
 import models.Owner;
@@ -32,6 +33,16 @@ public class Runner {
         DBHelper.save(owner3);
 
         List<Owner> owners = DBHelper.getAll(Owner.class);
+
+        owner1.setUsername("updated test username");
+        DBOwner.update(owner1);
+
+        List<Owner> owners2 = DBHelper.getAll(Owner.class);
+
+        DBOwner.delete(owner3);
+        List<Owner> owners3 = DBHelper.getAll(Owner.class);
+
+
 
         DBHelper.save(folder1);
         DBHelper.save(folder2);
