@@ -19,11 +19,15 @@ public class Runner {
        File file5 = new File("test name", "txt", 4, folder1);
 
         DBHelper.save(folder1);
+        DBHelper.save(folder2);
+        DBHelper.save(folder3);
+        DBHelper.save(folder4);
         DBHelper.save(file1);
         DBHelper.save(file2);
         DBHelper.save(file3);
         DBHelper.save(file4);
         DBHelper.save(file5);
         List<File> files = DBHelper.getAll(File.class);
+        List<Folder> folders = DBHelper.getAll(Folder.class);
     }
 }
