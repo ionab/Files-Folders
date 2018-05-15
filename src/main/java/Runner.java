@@ -1,3 +1,5 @@
+import db.DBFile;
+import db.DBFolder;
 import db.DBHelper;
 import models.File;
 import models.Folder;
@@ -29,5 +31,13 @@ public class Runner {
         DBHelper.save(file5);
         List<File> files = DBHelper.getAll(File.class);
         List<Folder> folders = DBHelper.getAll(Folder.class);
-    }
+
+        file1.setExtention("pdf");
+        DBFile.update(file1);
+        List<File> files2 = DBHelper.getAll(File.class);
+        folder2.setTitle("test title updated");
+        DBFolder.update(folder2);
+        List<Folder> folders2 = DBHelper.getAll(Folder.class);
+
+        }
 }
